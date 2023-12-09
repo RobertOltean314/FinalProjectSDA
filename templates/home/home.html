@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% load static %}
-<script src="{% static 'home/scripts.js' %}"></script>
 
 {% block content %}
     <div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
         <div style="width: 90%; margin-left: auto;">
             <canvas id="pieChart" data-labels="{{ labels|safe }}" data-data="{{ data|safe }}"></canvas>
+            <!-- Hidden elements to store data -->
+            <div id="labelsData" style="display: none;">{{ labels | safe }}</div>
+            <div id="chartData" style="display: none;">{{ data | safe }}</div>
         </div>
     </div>
+
+    <!-- Load Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Then load your script -->
+    <script src="{% static 'home/scripts.js' %}"></script>
 {% endblock %}

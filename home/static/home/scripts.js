@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var ctx = document.getElementById('pieChart').getContext('2d');
-    var labels = JSON.parse(document.getElementById('pieChart').getAttribute('data-labels'));
-    var data = JSON.parse(document.getElementById('pieChart').getAttribute('data-data'));
+    var labels = JSON.parse(document.getElementById('labelsData').textContent);
+    var data = JSON.parse(document.getElementById('chartData').textContent);
 
     var pieChart = new Chart(ctx, {
         type: 'pie',
@@ -25,8 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            width: 400,
-            height: 400,
+            aspectRatio: 1
         }
     });
 });
