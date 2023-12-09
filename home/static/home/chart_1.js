@@ -1,12 +1,12 @@
-window.onload = function() {
+window.onload = function () {
     const pieChartElement = document.getElementById('pieChart');
 
     if (pieChartElement && typeof Chart !== 'undefined') {
         const ctx = pieChartElement.getContext('2d');
-        var labels = { labels,safe };
-        var data = { data,safe };
+        var labels = {labels, safe};
+        var data = {data, safe};
 
-        const generateColorArray = (baseColor, opacity, length) => 
+        const generateColorArray = (baseColor, opacity, length) =>
             Array(length).fill().map(() => `rgba(${baseColor}, ${opacity})`);
 
         const backgroundColors = generateColorArray('255, 99, 132', 0.7, data.length);
@@ -26,8 +26,6 @@ window.onload = function() {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                width: 400, 
-                height: 400, 
             }
         });
     } else {
