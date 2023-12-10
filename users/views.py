@@ -14,3 +14,11 @@ def register(request):
     else:
         form = UserRegistrationForm()
     return render(request, 'users/register.html', {'form': form})
+
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+def logout_view(request):
+    logout(request)
+    #aici poti pune alt url unde vrei sa faca redirect dupa ce se delogheaza
+    return redirect('home')
