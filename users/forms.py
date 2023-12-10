@@ -1,36 +1,11 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
 
 
-class AuthenticationNewForm(AuthenticationForm):
+class UserRegistrationForm(UserCreationForm):
+    email = forms.EmailField()
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.fields['username'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your username'})
-        self.fields['password'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your password'})
-
-
-class UserForm(UserCreationForm):
     class Meta:
         model = User
-        fields = ['first_name', 'last_name', 'email',
-                  #'username'
-                  ]
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.fields['first_name'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your first name'})
-        self.fields['last_name'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your last name'})
-        self.fields['email'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Please enter your email'})
-        # self.fields['username'].widget.attrs.update(
-        #     {'class': 'form-control', 'placeholder': 'Please enter your username'})
-        self.fields['password1'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your password'})
-        self.fields['password2'].widget.attrs.update(
-            {'class': 'form-control', 'placeholder': 'Please enter your password confirmation'})
+        fields = ['username', 'email', 'password1', 'password2']
