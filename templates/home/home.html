@@ -2,14 +2,12 @@
 {% load static %}
 
 {% block content %}
-    <div class="chart-container" style="height: 90vh;">
-        <div style="width: 50%; margin-left: auto;">
-
+    <div class="chart-container">
+        <div>
             <canvas id="pieChart" data-labels="{{ labels|safe }}" data-data="{{ data|safe }}"></canvas>
             <!-- Hidden elements to store data -->
             <div id="labelsData" style="display: none;">{{ labels | safe }}</div>
             <div id="chartData" style="display: none;">{{ data | safe }}</div>
-
         </div>
     </div>
 
