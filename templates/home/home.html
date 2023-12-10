@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content %}
-    <div class="chart-container" style="height: 80vh;">
-        <div style="width: 90%; margin-left: auto;">
+    <div class="chart-container" style="height: 100vh;">
+        <div style="width: 80%; margin-left: auto;">
             <canvas id="pieChart" data-labels="{{ labels|safe }}" data-data="{{ data|safe }}"></canvas>
             <!-- Hidden elements to store data -->
             <div id="labelsData" style="display: none;">{{ labels | safe }}</div>
@@ -14,5 +14,5 @@
     <!-- Load Chart.js library -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Then load your script -->
-    <script src="{% static 'home/scripts.js' %}"></script>
+    <script src="{% static 'JS/scripts.js' %}"></script>
 {% endblock %}

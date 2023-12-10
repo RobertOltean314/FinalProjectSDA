@@ -5,7 +5,7 @@ from django.shortcuts import render
 
 def home(request):
     labels = ['Label 1', 'Label 2', 'Label 3']
-    data = [30, 50, 20]
+    data = [30, 10, 60]
 
     context = {
         'labels': json.dumps(labels),

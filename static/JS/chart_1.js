@@ -26,8 +26,8 @@ window.onload = function() {
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
-                width: 400, 
-                height: 400, 
+                width: 800,
+                height: 800,
             }
         });
     } else {
