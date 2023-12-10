@@ -8,7 +8,7 @@
             <div class="col-md-10 offset-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="text-center">Register</h3>
+                        <h3 class="text-center">Log in</h3>
                     </div>
                     <form method="post" enctype="multipart/form-data">
                         {% csrf_token %}
@@ -16,12 +16,12 @@
                             {{ form| crispy }}
                         </div>
                         <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-success">Save</button>
+                            <button type="submit" class="btn btn-success">Login</button>
                         </div>
                     </form>
                     <div class="border-top pt-3 d-flex align-items-center justify-content-center">
-                        <small class="text-muted">
-                            Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        <small class="test-muted">
+                            Don't you have an account yet? <a class="ml-2" href="{% url 'register' %}">Sign In</a>
                         </small>
                     </div>
                 </div>
