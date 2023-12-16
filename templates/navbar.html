@@ -15,23 +15,32 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="{% url 'account' %}">Account</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'list-of-transactions' %}">Transactions</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Transactions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'list-of-transactions' %}">Your Transactions</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'create-transaction' %}">Create a new
+                                Transaction</a></li>
+                        </ul>
                     </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Budget</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Manage Groups</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
                             Settings
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Update Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Some settings</a></li>
                         </ul>
                     </li>
                 </ul>
