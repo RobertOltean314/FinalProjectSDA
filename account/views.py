@@ -23,4 +23,4 @@ def account(request):
         'p_form': p_form
     }
 
-    return render(request, 'account/update_account.html', context)
+    return render(request, 'account/account.html', context)

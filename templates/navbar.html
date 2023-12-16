@@ -13,23 +13,34 @@
                         <a class="nav-link active" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Transactions</a>
+                        <a class="nav-link active" href="{% url 'account' %}">Account</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Transactions
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'list-of-transactions' %}">Your Transactions</a>
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'create-transaction' %}">Create a new
+                                Transaction</a></li>
+                        </ul>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Budget</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Manage Groups</a>
                     </li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            Account
+                            Settings
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">View Profile</a></li>
-                            <li><a class="dropdown-item" href="{% url 'account' %}">Update Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Some settings</a></li>
+                            <li><a class="dropdown-item" href="#">Update Profile</a></li>
                         </ul>
                     </li>
                 </ul>
