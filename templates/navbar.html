@@ -13,9 +13,6 @@
                         <a class="nav-link active" href="{% url 'home' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="{% url 'account' %}">Account</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="#">Transactions</a>
                     </li>
                     <li class="nav-item">
@@ -25,12 +22,13 @@
                         <a class="nav-link active" href="#">Manage Groups</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
                            aria-expanded="false">
-                            Settings
+                            Account
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Update Profile</a></li>
+                            <li><a class="dropdown-item" href="#">View Profile</a></li>
+                            <li><a class="dropdown-item" href="{% url 'account' %}">Update Profile</a></li>
                             <li><a class="dropdown-item" href="#">Some settings</a></li>
                         </ul>
                     </li>
