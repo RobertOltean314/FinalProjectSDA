@@ -16,7 +16,7 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
     template_name = 'transactions/create_transaction.html'
     model = Transaction
     form_class = TransactionForm
-    success_url = reverse_lazy('transactions')
+    success_url = reverse_lazy('list-of-transactions')
 
 
 class TransactionUpdateView(LoginRequiredMixin, UpdateView):
