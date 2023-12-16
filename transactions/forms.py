@@ -37,7 +37,8 @@ class CategoryForm(forms.ModelForm):
 
 class TransactionForm(forms.ModelForm):
     category = forms.ModelChoiceField(queryset=Category.objects.all(), required=False)
-    display_date = forms.DateField(initial=datetime.now().date(), widget=forms.DateInput(attrs={'class': 'form-control datepicker', 'type': 'date'}))
+    #display_date = forms.DateField(initial=datetime.now().date(), widget=forms.DateInput(attrs={'class': 'form-control datepicker', 'type': 'date'}))
+    display_date = forms.DateField(initial=datetime.now().date(), widget=forms.DateInput(attrs={'type': 'date'}))
     
     class Meta:
         model = Transaction
