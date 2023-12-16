@@ -15,11 +15,13 @@
                         {% csrf_token %}
                         <div class="card-body">
                             {{ form.as_p }}
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#categoryModal">
+                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#categoryModal">
                                 Create New Category
                             </button>
                             <!-- Modal -->
-                            <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="categoryModalLabel" aria-hidden="true">
+                            <div class="modal fade" id="categoryModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="categoryModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -32,7 +34,8 @@
                                             {{ context.category.as_p }}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                            </button>
                                             <button type="submit" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
@@ -40,10 +43,9 @@
                             </div>
                         </div>
                     </form>
-                        <div class="card-footer text-center">
-                            <button type="submit" class="btn btn-success">Save</button>
-                        </div>
-                    </form>
+                    <div class="card-footer text-center">
+                        <button type="submit" class="btn btn-success">Save</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -52,7 +54,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        $(function() {
+        $(function () {
             $(".datepicker").datepicker();
         });
     </script>

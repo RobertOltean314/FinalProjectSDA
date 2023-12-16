@@ -42,7 +42,7 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
             category.user = self.request.user
             category.save()
             form.instance.category = category
-        form.instance.month = form.cleaned_data['display_date'].month  # Extract month from display_date
+        form.instance.month = form.cleaned_data['date'].month  # Correct field name to 'date'
         return super().form_valid(form)
 
 
