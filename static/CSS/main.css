@@ -30,3 +30,11 @@ body {
     border-radius: 3px;
     margin-bottom: 20px;
 }
+
+.income {
+    background-color: green;
+}
+
+.expense {
+    background-color: red;
+}

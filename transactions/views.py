@@ -4,7 +4,6 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from transactions.forms import TransactionForm, TransactionUpdateForm, CategoryForm
 from transactions.models import Transaction
-from django.utils import timezone
 from datetime import datetime
 
 
@@ -23,7 +22,7 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
 
     def get_initial(self):
         initial = super().get_initial()
-        initial['month'] = datetime.now().month  # Set initial value for 'month' field
+        initial['month'] = datetime.now().month
         return initial
 
     def get_context_data(self, **kwargs):
@@ -36,13 +35,15 @@ class TransactionCreateView(LoginRequiredMixin, CreateView):
 
     def form_valid(self, form):
         context = self.get_context_data()
-        category = context['category']
-        if category.is_valid():
-            category = category.save(commit=False)
+        category_form = context['category']
+
+        if category_form.is_valid():
+            category = category_form.save(commit=False)
             category.user = self.request.user
             category.save()
             form.instance.category = category
-        form.instance.month = form.cleaned_data['date'].month  # Correct field name to 'date'
+
+        form.instance.month = form.cleaned_data['display_date'].month
         return super().form_valid(form)
 
 
